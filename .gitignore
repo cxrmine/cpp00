@@ -6,6 +6,7 @@ megaphone
 
 # lsp
 compile_commands.json
+.clang-format
 
 # others
 .cache
