@@ -1,6 +1,9 @@
 # binary
 megaphone
 
+# objects
+*.o
+
 # lsp
 compile_commands.json
 
