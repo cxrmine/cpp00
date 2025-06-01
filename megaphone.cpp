@@ -10,10 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <cctype>
 #include <iostream>
+#include <ostream>
+#include <string>
 
 int main(int argc, char *argv[]) {
-	std::cout << argc << "\n";
-	std::cout << argv[1] << "\n";
-	return 0;
+  if (argc == 1) {
+    std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+    return 0;
+  }
+
+  std::string s = argv[1];
+  return 0;
 }
