@@ -1,0 +1,10 @@
+# binary
+megaphone
+
+# lsp
+compile_commands.json
+
+# others
+.cache
+.vscode
+
