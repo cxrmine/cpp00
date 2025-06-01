@@ -10,19 +10,19 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=megaphone
+NAME=bin/megaphone
 MAIN=megaphone.cpp
 COMPILER=c++
 COMPILER_ARGS=-Wall -Wextra -Werror -std=c++98
-MAIN_OBJECT=test
-
-$(NAME):
-	$(COMPILER) $(COMPILER_ARGS) $(MAIN) -o $@
-
-%.cpp: %.o
-	$(COMPILER) $(COMPILER_ARGS) $@ -o $<
+MAIN_OBJECT=$(patsubst %.cpp, %.o, $(MAIN))
 
 all: $(NAME)
+
+$(NAME): $(MAIN_OBJECT)
+	$(COMPILER) $(COMPILER_ARGS) $(MAIN_OBJECT) -o $@
+
+%.o: %.cpp
+	$(COMPILER) $(COMPILER_ARGS) -c $< -o $@
 
 clean:
 	rm -f $(NAME)
