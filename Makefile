@@ -14,20 +14,22 @@ NAME=bin/megaphone
 MAIN=megaphone.cpp
 COMPILER=c++
 COMPILER_ARGS=-Wall -Wextra -Werror -std=c++98
-MAIN_OBJECT=$(patsubst %.cpp, %.o, $(MAIN))
+MAIN_OBJECT=$(addprefix obj/, $(patsubst %.cpp, %.o, $(MAIN)))
 
 all: $(NAME)
 
 $(NAME): $(MAIN_OBJECT)
 	$(COMPILER) $(COMPILER_ARGS) $(MAIN_OBJECT) -o $@
 
-%.o: %.cpp
+obj/%.o: %.cpp
+	@mkdir -p $(dir $(NAME))
+	@mkdir -p $(dir $(MAIN_OBJECT))
 	$(COMPILER) $(COMPILER_ARGS) -c $< -o $@
 
 clean:
-	rm -f $(NAME)
+	rm -rf $(dir $(MAIN_OBJECT))
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
