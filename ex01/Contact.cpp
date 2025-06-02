@@ -10,4 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Contact.hpp"
 
+Contact::Contact () {
+	Contact::firstName = "";
+	Contact::lastName = "";
+	Contact::darkestSecret = "";
+	Contact::phoneNumber = 0;
+} 
+
+Contact::~Contact () {
+	return ;
+}
