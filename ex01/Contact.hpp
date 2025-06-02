@@ -24,7 +24,7 @@ public:
   std::string lastName;
   std::string nickname;
   std::string darkestSecret;
-  long phoneNumber;
+  std::string phoneNumber;
 };
 
 #endif
