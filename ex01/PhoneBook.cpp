@@ -12,6 +12,7 @@
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include <iostream>
 
 bool PhoneBook::isFull() {
 	if (PhoneBook::size == PhoneBook::max)
@@ -20,8 +21,24 @@ bool PhoneBook::isFull() {
 }
 
 void PhoneBook::add(Contact contact) {
+	std::string input;
+
 	if (PhoneBook::isFull())
 		return ;
+	while (true) {
+		std::cout << "first name:";
+		std::cin >> input;
+		contact.firstName = input;
+		std::cout << "last name:";
+		std::cin >> input;
+		contact.lastName = input;
+		std::cout << "phone number:";
+		std::cin >> input;
+		contact.phoneNumber = input;
+		std::cout << "darkest secret:";
+		std::cin >> input;
+		contact.darkestSecret = input;
+	}
 	PhoneBook::contacts[PhoneBook::size] = contact;
 	PhoneBook::size++;
 }
