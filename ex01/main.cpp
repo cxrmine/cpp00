@@ -15,7 +15,7 @@
 
 int main () {
 	std::string test;
-	PhoneBook *phoneBook = new PhoneBook();
+	PhoneBook phoneBook;
 
 	while (true) {
 		std::cout << "enter something: ";
@@ -23,7 +23,6 @@ int main () {
 		if (test == "q")
 			break ;
 	}
-	std::cout << phoneBook->max << std::endl;
-	delete phoneBook;
+	std::cout << phoneBook.max << std::endl;
 	return 0;
 }
