@@ -30,3 +30,7 @@ PhoneBook::PhoneBook() {
 	PhoneBook::size = 0;
 	PhoneBook::max = 8;
 }
+
+PhoneBook::~PhoneBook() {
+	return ;
+}
