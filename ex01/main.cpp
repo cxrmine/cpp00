@@ -11,15 +11,19 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include "Contact.hpp"
 #include "PhoneBook.hpp"
 
 int main () {
 	std::string test;
 	PhoneBook phoneBook;
+	Contact		contact;
 
 	while (true) {
 		std::cout << "enter something: ";
 		std::cin >> test;
+		if (test == "ADD")
+			phoneBook.add(contact);
 		if (test == "q")
 			break ;
 	}
