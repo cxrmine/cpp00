@@ -15,8 +15,8 @@
 #include <iomanip>
 #include <iostream>
 #include <iterator>
-#include <string>
 #include <sstream>
+#include <string>
 
 bool PhoneBook::isFull() {
   if (PhoneBook::size == PhoneBook::max)
@@ -50,21 +50,29 @@ void PhoneBook::add(Contact *contact, PhoneBook *phoneBook) {
 }
 
 void PhoneBook::print(PhoneBook *phoneBook) {
-	std::string string_index = "index";
-	std::string string_fname = "first name";
-	std::string string_lname = "last name";
-	std::string string_nickname = "nickname";
+  std::string string_index = "index";
+  std::string string_fname = "first name";
+  std::string string_lname = "last name";
+  std::string string_nickname = "nickname";
   if (phoneBook->size == 0)
     return;
-  std::cout << std::setfill(' ') << std::setw(10 - string_index.size()) << string_index << "|";
-  std::cout << std::setfill(' ') << std::setw(string_fname.size())<< string_fname << "|";
-  std::cout << std::setfill(' ') << std::setw(string_lname.size())<< string_lname << "|";
-  std::cout << std::setfill(' ') << std::setw(string_nickname.size())<< string_nickname << "\n";
+  std::cout << std::setfill(' ') << std::setw(10 - string_index.size())
+            << string_index << "|";
+  std::cout << std::setfill(' ') << std::setw(string_fname.size())
+            << string_fname << "|";
+  std::cout << std::setfill(' ') << std::setw(string_lname.size())
+            << string_lname << "|";
+  std::cout << std::setfill(' ') << std::setw(string_nickname.size())
+            << string_nickname << "\n";
   for (std::size_t i = 0; i < phoneBook->size; i++) {
-    std::cout << std::setfill(' ') << std::setw(10 - string_index.size()) << phoneBook->contacts[i].index << "|";
-    std::cout << std::setfill(' ') << std::setw(string_fname.size()) << phoneBook->contacts[i].firstName << "|";
-    std::cout << std::setfill(' ') << std::setw(string_lname.size()) << phoneBook->contacts[i].lastName << "|";
-    std::cout << std::setfill(' ') << std::setw(string_nickname.size()) << phoneBook->contacts[i].nickname << "\n";
+    std::cout << std::setfill(' ') << std::setw(10 - string_index.size())
+              << phoneBook->contacts[i].index << "|";
+    std::cout << std::setfill(' ') << std::setw(string_fname.size())
+              << phoneBook->contacts[i].firstName << "|";
+    std::cout << std::setfill(' ') << std::setw(string_lname.size())
+              << phoneBook->contacts[i].lastName << "|";
+    std::cout << std::setfill(' ') << std::setw(string_nickname.size())
+              << phoneBook->contacts[i].nickname << "\n";
   }
   return;
 }
