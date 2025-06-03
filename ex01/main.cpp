@@ -23,10 +23,10 @@ int main() {
     std::cout << "enter something: ";
     std::cin >> test;
     if (test == "ADD")
-      phoneBook.add(contact);
+      phoneBook.add(&contact, &phoneBook);
     if (test == "q")
       break;
   }
-  std::cout << phoneBook.max << std::endl;
+  phoneBook.print(&phoneBook);
   return 0;
 }
