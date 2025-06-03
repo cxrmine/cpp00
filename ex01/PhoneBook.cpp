@@ -12,6 +12,7 @@
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
+#include <iomanip>
 #include <iostream>
 #include <sstream>
 
@@ -50,12 +51,16 @@ void PhoneBook::print(PhoneBook *phoneBook)
 {
 	 if (phoneBook->size == 0)	
 		 return ;
+	std::cout << "index" << " | ";
+ 	std::cout << "first name" << " | ";
+ 	std::cout << "last name" << " | ";
+ 	std::cout << "nickname" << "\n";
 	 for (std::size_t i = 0; i < phoneBook->size; i++) {
-	 	std::cout << phoneBook->contacts[i].index << '\n';
-	 	std::cout << phoneBook->contacts[i].firstName << '\n';
-	 	std::cout << phoneBook->contacts[i].lastName << '\n';
-	 	std::cout << phoneBook->contacts[i].phoneNumber << '\n';
-	 	std::cout << phoneBook->contacts[i].darkestSecret << '\n';
+	 	std::cout << phoneBook->contacts[i].index << " | ";
+	 	std::cout << phoneBook->contacts[i].firstName << " | ";
+	 	std::cout << phoneBook->contacts[i].lastName << " | ";
+	 	std::cout << phoneBook->contacts[i].phoneNumber << " | ";
+	 	std::cout << phoneBook->contacts[i].darkestSecret << "\n";
 	 }
 	 return ;
 }
