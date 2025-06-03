@@ -35,6 +35,9 @@ void PhoneBook::add(Contact *contact, PhoneBook *phoneBook) {
 	std::cout << "phone number: ";
 	std::cin >> input;
 	contact->phoneNumber = input;
+	std::cout << "nickname: ";
+	std::cin >> input;
+	contact->nickname = input;
 	std::cout << "darkest secret: ";
 	std::cin >> input;
 	contact->darkestSecret = input;
