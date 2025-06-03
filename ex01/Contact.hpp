@@ -25,6 +25,7 @@ public:
   std::string nickname;
   std::string darkestSecret;
   std::string phoneNumber;
+  std::string index;
 };
 
 #endif
