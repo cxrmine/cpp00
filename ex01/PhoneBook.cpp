@@ -20,27 +20,26 @@ bool PhoneBook::isFull() {
 	return false;
 }
 
-void PhoneBook::add(Contact contact) {
+void PhoneBook::add(Contact *contact, PhoneBook *phoneBook) {
 	std::string input;
 
 	if (PhoneBook::isFull())
 		return ;
-	while (true) {
-		std::cout << "first name:";
-		std::cin >> input;
-		contact.firstName = input;
-		std::cout << "last name:";
-		std::cin >> input;
-		contact.lastName = input;
-		std::cout << "phone number:";
-		std::cin >> input;
-		contact.phoneNumber = input;
-		std::cout << "darkest secret:";
-		std::cin >> input;
-		contact.darkestSecret = input;
-	}
-	PhoneBook::contacts[PhoneBook::size] = contact;
-	PhoneBook::size++;
+	std::cout << "first name: ";
+	std::cin >> input;
+	contact->firstName = input;
+	std::cout << "last name: ";
+	std::cin >> input;
+	contact->lastName = input;
+	std::cout << "phone number: ";
+	std::cin >> input;
+	contact->phoneNumber = input;
+	std::cout << "darkest secret: ";
+	std::cin >> input;
+	contact->darkestSecret = input;
+	phoneBook->contacts[phoneBook->size] = *contact;
+	phoneBook->size++;
+}
 }
 
 PhoneBook::PhoneBook() {
