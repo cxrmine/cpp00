@@ -13,6 +13,7 @@
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
 #include <iostream>
+#include <sstream>
 
 bool PhoneBook::isFull() {
 	if (PhoneBook::size == PhoneBook::max)
@@ -46,7 +47,7 @@ void PhoneBook::print(PhoneBook *phoneBook)
 {
 	 if (phoneBook->size == 0)	
 		 return ;
-	 for (std::size_t i = 0; i < size; i++) {
+	 for (std::size_t i = 0; i < phoneBook->max; i++) {
 	 	std::cout << phoneBook->contacts[i].index << '\n';
 	 	std::cout << phoneBook->contacts[i].firstName << '\n';
 	 	std::cout << phoneBook->contacts[i].lastName << '\n';
