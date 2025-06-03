@@ -20,16 +20,15 @@ SRC=main.cpp \
 INCLUDES=-I.
 COMPILER=c++
 COMPILER_ARGS=-Wall -Wextra -Werror -std=c++98 -g3 $(INCLUDES)
-MAIN_OBJECT=$(addprefix $(OBJ_PATH)/, $(patsubst %.cpp, %.o, $(SRC)))
+MAIN_OBJECT=$(addprefix $(BUILD_PATH)/, $(patsubst %.cpp, %.o, $(SRC)))
 
 all: $(NAME)
 
 $(NAME): $(MAIN_OBJECT)
 	$(COMPILER) $(COMPILER_ARGS) $(MAIN_OBJECT) -o $@
 
-$(OBJ_PATH)/%.o: %.cpp
+$(BUILD_PATH)/%.o: %.cpp
 	@mkdir -p $(dir $(NAME))
-	@mkdir -p $(dir $(MAIN_OBJECT))
 	$(COMPILER) $(COMPILER_ARGS) -c $< -o $@
 
 clean:
