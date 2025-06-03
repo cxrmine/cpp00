@@ -1,8 +1,11 @@
 # binary
 megaphone
+livrejaunepointfr
+bin/*
 
 # objects
 *.o
+obj/*.obj
 
 # lsp
 compile_commands.json
