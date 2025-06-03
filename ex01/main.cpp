@@ -13,15 +13,15 @@
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <istream>
 
 int main() {
   std::string test;
   PhoneBook phoneBook;
   Contact contact;
 
-  while (true) {
-    std::cout << "enter something: ";
-    std::cin >> test;
+	std::cout << "enter something: ";
+  while (std::cin >> test) {
     if (test == "ADD") {
       phoneBook.add(&contact, &phoneBook);
     } else if (test == "SEARCH") {
@@ -29,6 +29,9 @@ int main() {
     } else if (test == "EXIT") {
     	break ;
     }
+	std::cout << "enter something: ";
+	std::cin.clear();
+	std::cin.ignore(256, '\n');
   }
   phoneBook.print(&phoneBook);
   return 0;
