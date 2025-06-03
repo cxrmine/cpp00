@@ -37,6 +37,7 @@ void PhoneBook::add(Contact *contact, PhoneBook *phoneBook) {
 	std::cout << "darkest secret: ";
 	std::cin >> input;
 	contact->darkestSecret = input;
+	contact->index = phoneBook->size + 1;
 	phoneBook->contacts[phoneBook->size] = *contact;
 	phoneBook->size++;
 }
@@ -46,6 +47,7 @@ void PhoneBook::print(PhoneBook *phoneBook)
 	 if (phoneBook->size == 0)	
 		 return ;
 	 for (std::size_t i = 0; i < size; i++) {
+	 	std::cout << phoneBook->contacts[i].index << '\n';
 	 	std::cout << phoneBook->contacts[i].firstName << '\n';
 	 	std::cout << phoneBook->contacts[i].lastName << '\n';
 	 	std::cout << phoneBook->contacts[i].phoneNumber << '\n';
