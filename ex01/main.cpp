@@ -22,10 +22,13 @@ int main() {
   while (true) {
     std::cout << "enter something: ";
     std::cin >> test;
-    if (test == "ADD")
+    if (test == "ADD") {
       phoneBook.add(&contact, &phoneBook);
-    if (test == "q")
-      break;
+    } else if (test == "SEARCH") {
+      phoneBook.search(&contact, &phoneBook);
+    } else {
+    	break ;
+    }
   }
   phoneBook.print(&phoneBook);
   return 0;
