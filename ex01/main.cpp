@@ -26,7 +26,7 @@ int main() {
       phoneBook.add(&contact, &phoneBook);
     } else if (test == "SEARCH") {
       phoneBook.search(&contact, &phoneBook);
-    } else {
+    } else if (test == "EXIT") {
     	break ;
     }
   }
