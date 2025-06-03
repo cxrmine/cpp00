@@ -25,7 +25,7 @@ int main() {
     if (test == "ADD") {
       phoneBook.add(&contact, &phoneBook);
     } else if (test == "SEARCH") {
-      phoneBook.search(&contact, &phoneBook);
+      phoneBook.search(&phoneBook);
     } else if (test == "EXIT") {
     	break ;
     }
@@ -33,6 +33,5 @@ int main() {
 	std::cin.clear();
 	std::cin.ignore(256, '\n');
   }
-  phoneBook.print(&phoneBook);
   return 0;
 }
