@@ -42,10 +42,9 @@ void PhoneBook::add(Contact *contact, PhoneBook *phoneBook) {
   std::cout << "darkest secret: ";
   std::cin >> input;
   contact->darkestSecret = input;
-  if (PhoneBook::isFull())
-  {
-	contact->index = 8;
-	phoneBook->contacts[7] = *contact;
+  if (PhoneBook::isFull()) {
+    contact->index = 8;
+    phoneBook->contacts[7] = *contact;
     return;
   }
   contact->index = phoneBook->size + 1;
@@ -89,16 +88,15 @@ void PhoneBook::search(PhoneBook *phoneBook) {
   ss << input;
   ss >> index;
 
-  if (index > phoneBook->size)
-  {
-	std::cout << "this contact doesn't exists..." << "\n";
-	return ;
+  if (index > phoneBook->size) {
+    std::cout << "this contact doesn't exists..." << "\n";
+    return;
   }
 
-  if (phoneBook->size == 0)
-  {
-	std::cout << "you haven't added any contacts yet, please do with ADD" << "\n";
-    return ;
+  if (phoneBook->size == 0) {
+    std::cout << "you haven't added any contacts yet, please do with ADD"
+              << "\n";
+    return;
   }
 
   index = index - 1;
