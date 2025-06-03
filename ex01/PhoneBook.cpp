@@ -70,7 +70,12 @@ void PhoneBook::search(Contact *contact, PhoneBook *phoneBook)
 	ss >> index;
 	if (phoneBook->size == 0)
 		return ;
-	std::cout << index << '\n';
+	index = index - 1;
+	std::cout << phoneBook->contacts[index].index << "\n";
+	std::cout << phoneBook->contacts[index].firstName << "\n";
+	std::cout << phoneBook->contacts[index].lastName << "\n";
+	std::cout << phoneBook->contacts[index].darkestSecret << "\n";
+	std::cout << phoneBook->contacts[index].phoneNumber << "\n";
 	return ;
 }
 
