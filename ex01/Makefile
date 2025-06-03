@@ -10,7 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME=bin/livrejaunepointfr
+BUILD_PATH=bin
+OBJ_PATH=obj
+NAME=$(BUILD_PATH)/livrejaunepointfr
 SRC=main.cpp \
 	PhoneBook.cpp \
 	Contact.cpp \
@@ -18,14 +20,14 @@ SRC=main.cpp \
 INCLUDES=-I.
 COMPILER=c++
 COMPILER_ARGS=-Wall -Wextra -Werror -std=c++98 -g3 $(INCLUDES)
-MAIN_OBJECT=$(addprefix obj/, $(patsubst %.cpp, %.o, $(SRC)))
+MAIN_OBJECT=$(addprefix $(OBJ_PATH)/, $(patsubst %.cpp, %.o, $(SRC)))
 
 all: $(NAME)
 
 $(NAME): $(MAIN_OBJECT)
 	$(COMPILER) $(COMPILER_ARGS) $(MAIN_OBJECT) -o $@
 
-obj/%.o: %.cpp
+$(OBJ_PATH)/%.o: %.cpp
 	@mkdir -p $(dir $(NAME))
 	@mkdir -p $(dir $(MAIN_OBJECT))
 	$(COMPILER) $(COMPILER_ARGS) -c $< -o $@
