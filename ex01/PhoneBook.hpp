@@ -25,9 +25,9 @@ public:
   Contact contacts[8];
 
   bool isFull(void);
-  void print(PhoneBook *phoneBook);
   void add(Contact *contact, PhoneBook *phoneBook);
   void search(Contact *contact, PhoneBook *phoneBook);
+  void print(PhoneBook *phoneBook);
 };
 
 #endif
