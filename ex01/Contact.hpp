@@ -25,7 +25,7 @@ public:
   std::string nickname;
   std::string darkestSecret;
   std::string phoneNumber;
-  std::string index;
+  std::size_t index;
 };
 
 #endif

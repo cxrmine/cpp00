@@ -17,7 +17,7 @@ Contact::Contact() {
   Contact::lastName = "";
   Contact::darkestSecret = "";
   Contact::phoneNumber = "";
-  Contact::index = "";
+  Contact::index = 0;
 }
 
 Contact::~Contact() { return; }
