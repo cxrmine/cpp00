@@ -40,6 +40,18 @@ void PhoneBook::add(Contact *contact, PhoneBook *phoneBook) {
 	phoneBook->contacts[phoneBook->size] = *contact;
 	phoneBook->size++;
 }
+
+void PhoneBook::print(PhoneBook *phoneBook)
+{
+	 if (phoneBook->size == 0)	
+		 return ;
+	 for (std::size_t i = 0; i < size; i++) {
+	 	std::cout << phoneBook->contacts[i].firstName << '\n';
+	 	std::cout << phoneBook->contacts[i].lastName << '\n';
+	 	std::cout << phoneBook->contacts[i].phoneNumber << '\n';
+	 	std::cout << phoneBook->contacts[i].darkestSecret << '\n';
+	 }
+	 return ;
 }
 
 PhoneBook::PhoneBook() {
