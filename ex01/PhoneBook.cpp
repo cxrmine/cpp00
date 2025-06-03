@@ -56,6 +56,20 @@ void PhoneBook::print(PhoneBook *phoneBook)
 	 return ;
 }
 
+void PhoneBook::search(std::string input, Contact *contact, PhoneBook *phoneBook)
+{
+	std::stringstream ss;
+	std::size_t index;
+
+	(void) contact;
+	ss << input;
+	ss >> index;
+	if (phoneBook->size == 0)
+		return ;
+	std::cout << index << '\n';
+	return ;
+}
+
 PhoneBook::PhoneBook() {
 	PhoneBook::size = 0;
 	PhoneBook::max = 8;

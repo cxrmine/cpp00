@@ -27,6 +27,7 @@ public:
   bool isFull(void);
   void print(PhoneBook *phoneBook);
   void add(Contact *contact, PhoneBook *phoneBook);
+  void search(std::string input, Contact *contact, PhoneBook *phoneBook);
 };
 
 #endif
