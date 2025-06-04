@@ -20,7 +20,17 @@ int main() {
   PhoneBook phoneBook;
   Contact contact;
 
-  std::cout << "enter something: ";
+  std::cout << "Enter one of the options listed: [ADD - SEARCH - EXIT] (all "
+               "options are case sensitive)"
+            << "\n";
+  std::cout << "ADD: Add a contact to the list of contact" << "\n";
+  std::cout
+      << "SEARCH: Search a contact by their index [index range from 1 to 8]"
+      << "\n";
+  std::cout << "EXIT: You are tired of how beautiful the code is so you "
+               "decided you want to exit"
+            << "\n";
+  std::cout << "-> ";
   while (std::cin >> test) {
     if (test == "ADD") {
       phoneBook.add(&contact, &phoneBook);
@@ -30,7 +40,17 @@ int main() {
       break;
     }
 
-    std::cout << "enter something: ";
+    std::cout << "Enter one of the options listed: [ADD - SEARCH - EXIT] (all "
+                 "options are case sensitive)"
+              << "\n";
+    std::cout << "ADD: Add a contact to the list of contact" << "\n";
+    std::cout
+        << "SEARCH: Search a contact by their index [index range from 1 to 8]"
+        << "\n";
+    std::cout << "EXIT: You are tired of how beautiful the code is so you "
+                 "decided you want to exit"
+              << "\n";
+    std::cout << "-> ";
     std::cin.clear();
     std::cin.ignore(256, '\n');
   }
