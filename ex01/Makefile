@@ -12,7 +12,7 @@
 
 BUILD_PATH=bin
 OBJ_PATH=obj
-NAME=$(BUILD_PATH)/livrejaunepointfr
+NAME=$(BUILD_PATH)/phonebook
 SRC=main.cpp \
 	PhoneBook.cpp \
 	Contact.cpp \
