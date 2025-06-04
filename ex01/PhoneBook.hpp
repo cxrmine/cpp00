@@ -26,11 +26,11 @@ public:
   std::size_t max;
   Contact contacts[8];
 
-  bool isFull(void);
   void add(Contact *contact, PhoneBook *phoneBook);
   void search(PhoneBook *phoneBook);
 
 private:
+  bool isFull(void);
   void print(PhoneBook *phoneBook, std::size_t index);
   void askUserCredentials(Contact *contact);
 };
