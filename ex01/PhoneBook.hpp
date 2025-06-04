@@ -15,6 +15,8 @@
 
 #include "Contact.hpp"
 
+#define COLUMN_WIDTH 10
+
 class PhoneBook {
 public:
   PhoneBook();
