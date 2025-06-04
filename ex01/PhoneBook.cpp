@@ -14,7 +14,6 @@
 #include "Contact.hpp"
 #include <iomanip>
 #include <iostream>
-#include <iterator>
 #include <sstream>
 #include <string>
 
@@ -91,6 +90,19 @@ void PhoneBook::print(PhoneBook *phoneBook, std::size_t index) {
   return;
 }
 
+bool PhoneBook::isNumber(std::string input) {
+  for (std::string::iterator it = input.begin(), end = input.end(); it != end;
+       ++it) {
+    char c = *it;
+
+    if (c == '-')
+      continue;
+    if (c < 48 || c > 57)
+      return false;
+  }
+  return true;
+}
+
 void PhoneBook::search(PhoneBook *phoneBook) {
   std::stringstream ss;
   std::size_t index;
@@ -98,10 +110,18 @@ void PhoneBook::search(PhoneBook *phoneBook) {
 
   std::cout << "Enter index: ";
   std::cin >> input;
+
+  if (!PhoneBook::isNumber(input)) {
+    std::cout
+        << "Invalid input, please use digits in range of [1 - 8] (8 included)"
+        << "\n";
+    return;
+  }
+
   ss << input;
   ss >> index;
 
-  if (index > phoneBook->size) {
+  if (index > phoneBook->size || index < 1) {
     std::cout << "this contact doesn't exists..." << "\n";
     return;
   }

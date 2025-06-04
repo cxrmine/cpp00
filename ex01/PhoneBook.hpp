@@ -31,6 +31,7 @@ public:
 
 private:
   bool isFull(void);
+  bool isNumber(std::string input);
   void print(PhoneBook *phoneBook, std::size_t index);
   void askUserCredentials(Contact *contact);
   std::string truncateIfLong(std::string cred);
