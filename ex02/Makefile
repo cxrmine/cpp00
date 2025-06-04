@@ -13,8 +13,8 @@
 BUILD_PATH=bin
 OBJ_PATH=obj
 NAME=$(BUILD_PATH)/GlobalBanksters
-SRC=Account.cpp \
-	tests.cpp \
+SRC=tests.cpp \
+	Account.cpp \
 
 INCLUDES=-I.
 COMPILER=c++
@@ -31,7 +31,7 @@ $(BUILD_PATH)/%.o: %.cpp
 	$(COMPILER) $(COMPILER_ARGS) -c $< -o $@
 
 clean:
-	rm -rf ./obj
+	rm -rf $(wildcard $(BUILD_PATH)/*.o)
 
 fclean: clean
 	rm -rf $(NAME)
