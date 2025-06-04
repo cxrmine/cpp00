@@ -20,18 +20,18 @@ int main() {
   PhoneBook phoneBook;
   Contact contact;
 
-	std::cout << "enter something: ";
+  std::cout << "enter something: ";
   while (std::cin >> test) {
     if (test == "ADD") {
       phoneBook.add(&contact, &phoneBook);
     } else if (test == "SEARCH") {
       phoneBook.search(&phoneBook);
     } else if (test == "EXIT") {
-    	break ;
+      break;
     }
-	std::cout << "enter something: ";
-	std::cin.clear();
-	std::cin.ignore(256, '\n');
+    std::cout << "enter something: ";
+    std::cin.clear();
+    std::cin.ignore(256, '\n');
   }
   return 0;
 }

@@ -27,10 +27,10 @@ public:
   bool isFull(void);
   void add(Contact *contact, PhoneBook *phoneBook);
   void search(PhoneBook *phoneBook);
-  void print(PhoneBook *phoneBook, std::size_t index);
 
 private:
-	void askUserCredentials(Contact *contact);
+  void print(PhoneBook *phoneBook, std::size_t index);
+  void askUserCredentials(Contact *contact);
 };
 
 #endif
