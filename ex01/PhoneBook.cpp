@@ -82,9 +82,12 @@ void PhoneBook::print(PhoneBook *phoneBook, std::size_t index) {
   std::cout << std::setw(COLUMN_WIDTH) << s_lname << "|";
   std::cout << std::setw(COLUMN_WIDTH) << s_nick << "\n";
   std::cout << std::setw(COLUMN_WIDTH) << contact.index << "|";
-  std::cout << std::setw(COLUMN_WIDTH) << contact.firstName << "|";
-  std::cout << std::setw(COLUMN_WIDTH) << contact.lastName << "|";
-  std::cout << std::setw(COLUMN_WIDTH) << contact.nickname << "\n";
+  std::cout << std::setw(COLUMN_WIDTH)
+            << PhoneBook::truncateIfLong(contact.firstName) << "|";
+  std::cout << std::setw(COLUMN_WIDTH)
+            << PhoneBook::truncateIfLong(contact.lastName) << "|";
+  std::cout << std::setw(COLUMN_WIDTH)
+            << PhoneBook::truncateIfLong(contact.nickname) << "\n";
   return;
 }
 
@@ -115,9 +118,9 @@ void PhoneBook::search(PhoneBook *phoneBook) {
 }
 
 std::string PhoneBook::truncateIfLong(std::string cred) {
-	if (cred.size() > COLUMN_WIDTH)
-		return cred.substr(0, COLUMN_WIDTH - 1).append(".");
-	return cred;
+  if (cred.size() > COLUMN_WIDTH)
+    return cred.substr(0, COLUMN_WIDTH - 1).append(".");
+  return cred;
 }
 
 PhoneBook::PhoneBook() {
