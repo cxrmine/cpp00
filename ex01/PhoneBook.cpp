@@ -24,27 +24,42 @@ bool PhoneBook::isFull() {
   return false;
 }
 
-void PhoneBook::add(Contact *contact, PhoneBook *phoneBook) {
+void PhoneBook::askUserCredentials(Contact *contact) {
+  if (contact == NULL)
+    return;
+
   std::string input;
 
   std::cout << "first name: ";
   std::cin >> input;
   contact->firstName = input;
+
   std::cout << "last name: ";
   std::cin >> input;
   contact->lastName = input;
+
   std::cout << "phone number: ";
   std::cin >> input;
   contact->phoneNumber = input;
+
   std::cout << "nickname: ";
   std::cin >> input;
   contact->nickname = input;
+
   std::cout << "darkest secret: ";
   std::cin >> input;
   contact->darkestSecret = input;
+}
+
+void PhoneBook::add(Contact *contact, PhoneBook *phoneBook) {
+  if (contact == NULL || phoneBook == NULL)
+    return;
+
+  PhoneBook::askUserCredentials(contact);
+
   if (PhoneBook::isFull()) {
     contact->index = 8;
-    phoneBook->contacts[7] = *contact;
+    phoneBook->contacts[0] = *contact;
     return;
   }
   contact->index = phoneBook->size + 1;
