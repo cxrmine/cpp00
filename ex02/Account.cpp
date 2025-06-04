@@ -10,9 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Account.hpp"
+#include "./Account.hpp"
 #include <ctime>
-#include <iomanip>
 #include <iostream>
 
 int Account::_totalAmount = 0;
@@ -21,13 +20,21 @@ int Account::_nbAccounts = 0;
 int Account::_totalNbWithdrawals = 0;
 
 Account::Account(int initial_deposit) {
-  Account::_nbAccounts++;
   Account::_totalAmount += initial_deposit;
-  Account::_totalNbDeposits += 1;
 
   Account::_amount = initial_deposit;
-  Account::_nbDeposits = 1;
+  Account::_nbDeposits = 0;
+  Account::_nbWithdrawals = 0;
   Account::_accountIndex = Account::_nbAccounts;
+
+  std::cout << "[";
+  Account::_displayTimestamp();
+  std::cout << "] ";
+  std::cout << "index:" << Account::_accountIndex << ";";
+  std::cout << "amount:" << Account::_amount << ";";
+  std::cout << "created" << "\n";
+
+  Account::_nbAccounts++;
 }
 
 Account::~Account(void) { return; }
@@ -52,11 +59,13 @@ void Account::displayAccountsInfos(void) {
 
 void Account::makeDeposit(int deposit) {
   Account::_amount += deposit;
+  Account::_nbDeposits++;
   return;
 }
 
 bool Account::makeWithdrawal(int withdrawal) {
   Account::_amount -= withdrawal;
+  Account::_nbWithdrawals++;
   return true;
 }
 
@@ -73,9 +82,9 @@ void Account::displayStatus(void) const {
 }
 
 void Account::_displayTimestamp() {
-  std::time_t t = std::time(nullptr);
+  std::time_t t = std::time(NULL);
   char mbstr[100];
 
   if (std::strftime(mbstr, sizeof(mbstr), "%Y%m%d_%H%M%S", std::localtime(&t)))
-    std::cout << mbstr << '\n';
+    std::cout << mbstr;
 }
