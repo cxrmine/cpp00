@@ -146,6 +146,7 @@ std::string PhoneBook::truncateIfLong(std::string cred) {
 PhoneBook::PhoneBook() {
   PhoneBook::size = 0;
   PhoneBook::max = 8;
+  PhoneBook::oldest = 0;
 }
 
 PhoneBook::~PhoneBook() { return; }

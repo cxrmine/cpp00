@@ -24,6 +24,7 @@ public:
 
   std::size_t size;
   std::size_t max;
+  std::size_t oldest;
   Contact contacts[8];
 
   void add(Contact *contact, PhoneBook *phoneBook);
