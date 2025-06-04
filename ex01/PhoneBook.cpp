@@ -68,28 +68,26 @@ void PhoneBook::add(Contact *contact, PhoneBook *phoneBook) {
 }
 
 void PhoneBook::print(PhoneBook *phoneBook, std::size_t index) {
-  std::string string_index = "index";
-  std::string string_fname = "first name";
-  std::string string_lname = "last name";
-  std::string string_nickname = "nickname";
+  std::string s_idx = "index";
+  std::string s_fname = "first name";
+  std::string s_lname = "last name";
+  std::string s_nick = "nickname";
+
   if (phoneBook->size == 0)
     return;
-  std::cout << std::setfill(' ') << std::setw(string_index.size())
-            << string_index << "|";
-  std::cout << std::setfill(' ') << std::setw(string_fname.size())
-            << string_fname << "|";
-  std::cout << std::setfill(' ') << std::setw(string_lname.size())
-            << string_lname << "|";
-  std::cout << std::setfill(' ') << std::setw(string_nickname.size())
-            << string_nickname << "\n";
-  std::cout << std::setfill(' ') << std::setw(string_index.size())
-            << phoneBook->contacts[index].index << "|";
-  std::cout << std::setfill(' ') << std::setw(string_fname.size())
-            << phoneBook->contacts[index].firstName << "|";
-  std::cout << std::setfill(' ') << std::setw(string_lname.size())
-            << phoneBook->contacts[index].lastName << "|";
-  std::cout << std::setfill(' ') << std::setw(string_nickname.size())
-            << phoneBook->contacts[index].nickname << "\n";
+
+  std::cout << std::setw(s_idx.size()) << s_idx << "|";
+  std::cout << std::setw(s_fname.size()) << s_fname << "|";
+  std::cout << std::setw(s_lname.size()) << s_lname << "|";
+  std::cout << std::setw(s_nick.size()) << s_nick << "\n";
+  std::cout << std::setw(s_idx.size()) << phoneBook->contacts[index].index
+            << "|";
+  std::cout << std::setw(s_fname.size()) << phoneBook->contacts[index].firstName
+            << "|";
+  std::cout << std::setw(s_lname.size()) << phoneBook->contacts[index].lastName
+            << "|";
+  std::cout << std::setw(s_nick.size()) << phoneBook->contacts[index].nickname
+            << "\n";
   return;
 }
 
