@@ -86,6 +86,7 @@ void PhoneBook::print(PhoneBook *phoneBook, std::size_t index) {
   if (phoneBook->size == 0)
     return;
 
+  std::cout << "\n";
   std::cout << std::setw(COLUMN_WIDTH) << s_idx << "|";
   std::cout << std::setw(COLUMN_WIDTH) << s_fname << "|";
   std::cout << std::setw(COLUMN_WIDTH) << s_lname << "|";
@@ -97,6 +98,7 @@ void PhoneBook::print(PhoneBook *phoneBook, std::size_t index) {
             << PhoneBook::truncateIfLong(contact.lastName) << "|";
   std::cout << std::setw(COLUMN_WIDTH)
             << PhoneBook::truncateIfLong(contact.nickname) << "\n";
+  std::cout << "\n";
   return;
 }
 
@@ -118,7 +120,8 @@ void PhoneBook::search(PhoneBook *phoneBook) {
   std::size_t index;
   std::string input;
 
-  std::cout << "Enter index: ";
+  std::cout << "\n" << "Enter index" << "\n";
+  std::cout << "-> ";
   std::cin >> input;
 
   if (!PhoneBook::isNumber(input)) {
