@@ -114,6 +114,12 @@ void PhoneBook::search(PhoneBook *phoneBook) {
   return;
 }
 
+std::string PhoneBook::truncateIfLong(std::string cred) {
+	if (cred.size() > COLUMN_WIDTH)
+		return cred.substr(0, COLUMN_WIDTH - 1).append(".");
+	return cred;
+}
+
 PhoneBook::PhoneBook() {
   PhoneBook::size = 0;
   PhoneBook::max = 8;
