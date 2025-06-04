@@ -72,22 +72,19 @@ void PhoneBook::print(PhoneBook *phoneBook, std::size_t index) {
   std::string s_fname = "first name";
   std::string s_lname = "last name";
   std::string s_nick = "nickname";
+  Contact contact = phoneBook->contacts[index];
 
   if (phoneBook->size == 0)
     return;
 
-  std::cout << std::setw(s_idx.size()) << s_idx << "|";
-  std::cout << std::setw(s_fname.size()) << s_fname << "|";
-  std::cout << std::setw(s_lname.size()) << s_lname << "|";
-  std::cout << std::setw(s_nick.size()) << s_nick << "\n";
-  std::cout << std::setw(s_idx.size()) << phoneBook->contacts[index].index
-            << "|";
-  std::cout << std::setw(s_fname.size()) << phoneBook->contacts[index].firstName
-            << "|";
-  std::cout << std::setw(s_lname.size()) << phoneBook->contacts[index].lastName
-            << "|";
-  std::cout << std::setw(s_nick.size()) << phoneBook->contacts[index].nickname
-            << "\n";
+  std::cout << std::setw(COLUMN_WIDTH) << s_idx << "|";
+  std::cout << std::setw(COLUMN_WIDTH) << s_fname << "|";
+  std::cout << std::setw(COLUMN_WIDTH) << s_lname << "|";
+  std::cout << std::setw(COLUMN_WIDTH) << s_nick << "\n";
+  std::cout << std::setw(COLUMN_WIDTH) << contact.index << "|";
+  std::cout << std::setw(COLUMN_WIDTH) << contact.firstName << "|";
+  std::cout << std::setw(COLUMN_WIDTH) << contact.lastName << "|";
+  std::cout << std::setw(COLUMN_WIDTH) << contact.nickname << "\n";
   return;
 }
 

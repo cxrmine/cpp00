@@ -29,6 +29,7 @@ int main() {
     } else if (test == "EXIT") {
       break;
     }
+
     std::cout << "enter something: ";
     std::cin.clear();
     std::cin.ignore(256, '\n');
