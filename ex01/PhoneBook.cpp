@@ -29,25 +29,32 @@ void PhoneBook::askUserCredentials(Contact *contact) {
 
   std::string input;
 
-  std::cout << "first name: ";
+  std::cout << "\n" << "first name" << "\n";
+  std::cout << "-> ";
   std::cin >> input;
   contact->firstName = input;
 
-  std::cout << "last name: ";
+  std::cout << "\n" << "last name" << "\n";
+  std::cout << "-> ";
   std::cin >> input;
   contact->lastName = input;
 
-  std::cout << "phone number: ";
+  std::cout << "\n" << "phone number" << "\n";
+  std::cout << "-> ";
   std::cin >> input;
   contact->phoneNumber = input;
 
-  std::cout << "nickname: ";
+  std::cout << "\n" << "nickname" << "\n";
+  std::cout << "-> ";
   std::cin >> input;
   contact->nickname = input;
 
-  std::cout << "darkest secret: ";
+  std::cout << "\n" << "darkest secret" << "\n";
+  std::cout << "-> ";
   std::cin >> input;
   contact->darkestSecret = input;
+
+  std::cout << "\n";
 }
 
 void PhoneBook::add(Contact *contact, PhoneBook *phoneBook) {
