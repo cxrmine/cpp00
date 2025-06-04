@@ -134,14 +134,14 @@ void PhoneBook::search(PhoneBook *phoneBook) {
   ss << input;
   ss >> index;
 
-  if (index > phoneBook->size || index < 1) {
-    std::cout << "this contact doesn't exists..." << "\n";
-    return;
-  }
-
   if (phoneBook->size == 0) {
     std::cout << "you haven't added any contacts yet, please do with ADD"
               << "\n";
+    return;
+  }
+
+  if (index > phoneBook->size || index < 1) {
+    std::cout << "this contact doesn't exists..." << "\n";
     return;
   }
 
