@@ -57,8 +57,11 @@ void PhoneBook::add(Contact *contact, PhoneBook *phoneBook) {
   PhoneBook::askUserCredentials(contact);
 
   if (PhoneBook::isFull()) {
-    contact->index = 8;
-    phoneBook->contacts[0] = *contact;
+    if (phoneBook->oldest > phoneBook->max + 1)
+      phoneBook->oldest = 0;
+    contact->index = phoneBook->oldest + 1;
+    phoneBook->contacts[phoneBook->oldest] = *contact;
+	phoneBook->oldest++;
     return;
   }
   contact->index = phoneBook->size + 1;
@@ -145,7 +148,7 @@ std::string PhoneBook::truncateIfLong(std::string cred) {
 
 PhoneBook::PhoneBook() {
   PhoneBook::size = 0;
-  PhoneBook::max = 8;
+  PhoneBook::max = 2;
   PhoneBook::oldest = 0;
 }
 
