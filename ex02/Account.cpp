@@ -93,7 +93,6 @@ bool Account::makeWithdrawal(int withdrawal) {
     std::cout << "withdrawal:refused" << "\n";
     return false;
   }
-  Account::_amount -= withdrawal;
   Account::_nbWithdrawals++;
   Account::_totalNbWithdrawals++;
 
