@@ -54,7 +54,7 @@ void Account::displayAccountsInfos(void) {
   std::cout << "accounts:" << Account::_nbAccounts << ";";
   std::cout << "total:" << Account::_totalAmount << ";";
   std::cout << "deposits:" << Account::_totalNbDeposits << ";";
-  std::cout << "withdrawal:" << Account::_totalNbWithdrawals << "\n";
+  std::cout << "withdrawals:" << Account::_totalNbWithdrawals << "\n";
 }
 
 void Account::makeDeposit(int deposit) {
