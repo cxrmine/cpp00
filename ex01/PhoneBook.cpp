@@ -68,7 +68,7 @@ void PhoneBook::add(Contact *contact, PhoneBook *phoneBook) {
       phoneBook->oldest = 0;
     contact->index = phoneBook->oldest + 1;
     phoneBook->contacts[phoneBook->oldest] = *contact;
-	phoneBook->oldest++;
+    phoneBook->oldest++;
     return;
   }
   contact->index = phoneBook->size + 1;
