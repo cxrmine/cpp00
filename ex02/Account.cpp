@@ -37,7 +37,14 @@ Account::Account(int initial_deposit) {
   Account::_nbAccounts++;
 }
 
-Account::~Account(void) { return; }
+Account::~Account(void) {
+  std::cout << "[";
+  Account::_displayTimestamp();
+  std::cout << "] ";
+  std::cout << "index:" << Account::_accountIndex << ";";
+  std::cout << "amount:" << Account::_amount << ";";
+  std::cout << "closed" << "\n";
+}
 
 int Account::getNbAccounts(void) { return Account::_nbAccounts; }
 
