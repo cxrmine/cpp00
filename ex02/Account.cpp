@@ -67,12 +67,16 @@ void Account::displayAccountsInfos(void) {
 void Account::makeDeposit(int deposit) {
   Account::_amount += deposit;
   Account::_nbDeposits++;
+  Account::_totalNbDeposits++;
   return;
 }
 
 bool Account::makeWithdrawal(int withdrawal) {
+  if (Account::_amount - withdrawal < 0)
+    return false;
   Account::_amount -= withdrawal;
   Account::_nbWithdrawals++;
+  Account::_totalNbWithdrawals++;
   return true;
 }
 
