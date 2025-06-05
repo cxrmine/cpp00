@@ -20,11 +20,13 @@ int main(int argc, char **argv) {
   }
 
   for (std::size_t i = 1; argv[i]; i++) {
-	  for (std::size_t j = 0; argv[i][j]; j++) {
-    		if (argv[i][j] >= 97 && argv[i][j] <= 122)
-      			argv[i][j] -= 32;
-	  }
-  	std::cout << argv[i];
+    std::string s = argv[i];
+    for (std::string::iterator it = s.begin(), end = s.end(); it != end; ++it) {
+      char c = *it;
+      if (c >= 97 && c <= 122)
+        c -= 32;
+      std::cout << c;
+    }
   }
 
   std::cout << std::endl;
